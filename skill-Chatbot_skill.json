@@ -1,0 +1,719 @@
+{
+  "intents": [
+    {
+      "intent": "Admission",
+      "examples": [
+        {
+          "text": "Admission at college"
+        },
+        {
+          "text": "Admission at Institute"
+        },
+        {
+          "text": "What is the procedure for Admission at SVMIT?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Branch",
+      "examples": [
+        {
+          "text": "What are the branches available in your Institute?"
+        },
+        {
+          "text": "What are the courses offered by SVMIT??"
+        },
+        {
+          "text": "What are the departments SVMIT has?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Facilities",
+      "examples": [
+        {
+          "text": "Hostel accommodation available or not??"
+        },
+        {
+          "text": "What are the facilities available in College?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "Good Afternoon"
+        },
+        {
+          "text": "Good Evening"
+        },
+        {
+          "text": "Good Morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "information",
+      "examples": [
+        {
+          "text": "More information of your Institute or college"
+        },
+        {
+          "text": "What are the Branches available in college or institute?"
+        },
+        {
+          "text": "What are the courses your college or Institute offers?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Placement",
+      "examples": [
+        {
+          "text": "Campus drive"
+        },
+        {
+          "text": "Placement Records"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Admission",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Admission",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Intake",
+          "synonyms": [
+            "Intake details"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Branch",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Chemical Engineering",
+          "synonyms": [
+            "CH"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Computer Engineering",
+          "synonyms": [
+            "CE",
+            "Computer Science",
+            "Computer Science and Engineering"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Information Technology",
+          "synonyms": [
+            "IT"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Mechanical Engineering",
+          "synonyms": [
+            "Mech"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Facilities",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Hostel",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Library",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Research Lab",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Greetings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Good Afternoon",
+          "synonyms": [
+            "GA, gud noon, good noon"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Evening",
+          "synonyms": [
+            "GE, gud eve, good evening"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Morning",
+          "synonyms": [
+            "GM, gud morning"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Hi",
+          "synonyms": [
+            "Hi, Hello"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "information",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Address",
+          "synonyms": [
+            "Contact",
+            "Location"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Branch",
+          "synonyms": [
+            "branches"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Cources",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Enquiry",
+          "synonyms": [
+            "Admission Enquiry"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Facilities",
+          "synonyms": [
+            "Infrastructure",
+            "Resources"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Institute Information",
+          "synonyms": [
+            "About College",
+            "About Institute",
+            "College Information"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Placements",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Placement",
+          "synonyms": [
+            "Campus drive"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1601780331579",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Placements",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "SVMIT is having a very good placement records with a well established T & P cell. for details about placements visit https://svmit.ac.in/training-placement/placement-details/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601780331579",
+      "conditions": "#Placement || @Placements",
+      "dialog_node": "node_1_1601807245367",
+      "previous_sibling": "node_9_1601806312957"
+    },
+    {
+      "type": "standard",
+      "title": "Admission",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please visit https://svmit.ac.in/admission/ or contact Phone: +91 (2642) 245864  "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Admission || @Admission",
+      "dialog_node": "node_2_1601807414790",
+      "previous_sibling": "node_5_1601804255225"
+    },
+    {
+      "type": "standard",
+      "title": "Branch",
+      "parent": "node_4_1601780331579",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@Branch || #Branch",
+      "dialog_node": "node_3_1601805519540"
+    },
+    {
+      "type": "standard",
+      "title": "Information",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#information || @information",
+      "dialog_node": "node_4_1601780331579",
+      "previous_sibling": "node_2_1601807414790"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "#Greetings || @Greetings",
+      "dialog_node": "node_5_1601804255225",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Facilities",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Institute is having Hostel Facilities for boys and girls within campus area only.  it is also having well furnished computerized library facility with more than 30,000-35,000 books and a separate research lab to motivate students for reseach."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601780331579",
+      "conditions": "@Facilities || #Facilities",
+      "dialog_node": "node_9_1601806312957",
+      "previous_sibling": "node_3_1601805519540"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "@Greetings"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1601804255225",
+      "conditions": "@Greetings",
+      "dialog_node": "response_10_1601804279689"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Computer Engineering is having Intake of 60 with experienced staff and 100% placement Records. For more details visit www.svmit.ac.in/department/computer/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1601805519540",
+      "conditions": "@Branch:(Computer Engineering)",
+      "dialog_node": "response_10_1601805566840"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "Facilities",
+            "options": [
+              {
+                "label": "Hostel Facilities",
+                "value": {
+                  "input": {
+                    "text": "Hostel"
+                  }
+                }
+              },
+              {
+                "label": "Library",
+                "value": {
+                  "input": {
+                    "text": "Library"
+                  }
+                }
+              },
+              {
+                "label": "Research Lab",
+                "value": {
+                  "input": {
+                    "text": "Research Lab"
+                  }
+                }
+              }
+            ],
+            "description": "",
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_4_1601780331579",
+      "conditions": "@information:Facilities",
+      "dialog_node": "response_1_1601805141796",
+      "previous_sibling": "response_2_1601803979568"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "SVMIT is Located in centre of Bharuch city. Address and contact details are College Campus,\nOld National Highway – 8\nBharuch 392001 (Gujarat), India\nPhone: +91 (2642) 245864 "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601780331579",
+      "conditions": "@information:Address",
+      "dialog_node": "response_2_1601803979568",
+      "previous_sibling": "response_6_1601803785234"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Information Technology is having Intake of 60 with experienced staff and 100% placement Records. For more details visit www.svmit.ac.in/department/computer/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1601805519540",
+      "conditions": "@Branch:(Information Technology)",
+      "dialog_node": "response_2_1601805682448",
+      "previous_sibling": "response_10_1601805566840"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Mechanical Engineering is having intake of 120 with experienced staff and good placement history. For more details please visit http://svmit.ac.in/department/Mechanial/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1601805519540",
+      "conditions": "@Branch:(Mechanical Engineering)",
+      "dialog_node": "response_2_1601805872053",
+      "previous_sibling": "response_6_1601805734729"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Shri S’ad Vidya Mandal Institute of Technology was established in August 1996 as a self finance Institute. for more information visit www.svmit.ac.in"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601780331579",
+      "conditions": "@information:(Institute Information)",
+      "dialog_node": "response_5_1601780456798",
+      "previous_sibling": "node_1_1601807245367"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "SVMIT Offers B.E. and M.E Courses  in multiple branches of engineering. for more information you can visit www.svmit.ac.in"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601780331579",
+      "conditions": "@information:Cources",
+      "dialog_node": "response_6_1601803785234",
+      "previous_sibling": "response_9_1601780560736"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Chemical Engineering is having intake of 60 with experienced staff and 100%placement records. For more details please visit http://svmit.ac.in/department/chemical/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1601805519540",
+      "conditions": "@Branch:(Chemical Engineering)",
+      "dialog_node": "response_6_1601805734729",
+      "previous_sibling": "response_2_1601805682448"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1601804255225",
+      "conditions": "anything_else",
+      "dialog_node": "response_8_1601804313656",
+      "previous_sibling": "response_10_1601804279689"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "Branches we offer",
+            "options": [
+              {
+                "label": "Computer Engineering",
+                "value": {
+                  "input": {
+                    "text": "Computer Engineering"
+                  }
+                }
+              },
+              {
+                "label": "Information Technology",
+                "value": {
+                  "input": {
+                    "text": "Information Technology"
+                  }
+                }
+              },
+              {
+                "label": "Chemical Engineering",
+                "value": {
+                  "input": {
+                    "text": "Chemical Engieering"
+                  }
+                }
+              },
+              {
+                "label": "Mechanical Engineering",
+                "value": {
+                  "input": {
+                    "text": "Mechanical Engineering"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_4_1601780331579",
+      "conditions": "@information:Branch",
+      "dialog_node": "response_9_1601780560736",
+      "previous_sibling": "response_5_1601780456798"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. I am a College bot capable of give you information about Institute. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Chatbot_skill",
+  "language": "en",
+  "description": ""
+}
